@@ -18,6 +18,7 @@
 
       <h5>Genere: {{ $comic->type }}</h5>
        
+      <a href="{{ route('comics.index') }}">Torna alla lista di fumetti</a>
    </div>
 
 @endsection

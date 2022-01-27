@@ -35,7 +35,9 @@
          </tbody>
        </table>
       
-       {{ $new_comics->links() }}
+      {{ $new_comics->links() }}
+
+      
       
        
    </div>
