@@ -29,6 +29,9 @@ class ComicTableSeeder extends Seeder
             $new_comic->slug = Str::slug($new_comic->title, '-');
 
             $new_comic->save();
+
+            // dump nel terminale con db:seed ...
+            // dump($new_comic);
         }
     }
 }
