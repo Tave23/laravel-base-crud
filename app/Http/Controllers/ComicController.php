@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+// obbligatorio
+use App\Comic;
+
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -13,7 +16,11 @@ class ComicController extends Controller
      */
     public function index()
     {
-        return view('comics.home');
+        $new_comics = Comic::paginate(4);
+
+        // dump($new_comics);
+
+        return view('comics.home', compact('new_comics'));
     }
 
     /**
