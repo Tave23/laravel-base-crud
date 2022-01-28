@@ -36,7 +36,14 @@
                   <a href="{{ route('comics.edit', $comic) }}" type="button" class="btn btn-success">Edit</a>
                </td>
                <td>
-                  <a href="#" type="button" class="btn btn-danger">Delete</a>
+                  {{-- per la funzione delete bisogna NECESSARIAMENTE usare il form con il @method DELETE e @csrf --}}
+                  <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                     @csrf
+                     @method('DELETE')
+
+                     <button type="submit" type="button" class="btn btn-danger">Delete</button>
+
+                  </form>
                </td>
             </tr>
            
@@ -44,7 +51,7 @@
          </tbody>
        </table>
       
-      {{ $new_comics->links() }}
+      {{ $new_comics ?? ''->links() }}
 
       
       
