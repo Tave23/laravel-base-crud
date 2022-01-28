@@ -4,40 +4,39 @@
 
    <div class="container">
 
-      <h1>Modifica: {{ $comic->title }}</h1>
+      <h1>Aggiungi nuovo fumetto</h1>
        
 
-      <form action="{{ route('comics.update', $comic) }}" method="post">
+      <form action="{{ route('comics.store') }}" method="POST">
          @csrf
-         @method('PUT')
-
+         @method('POST')
          <div class="mb-3">
            <label for="title" class="form-label">Titolo</label>
-           <input type="text" class="form-control" id="title" name="title" value="{{ $comic->title }}">
+           <input type="text" class="form-control" id="title" name="title">
          </div>
          <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
-            <textarea style="height: 200px" class="form-control" id="title" name="description">{{ $comic->description }}</textarea>
+            <textarea class="form-control" id="title" name="description"></textarea>
          </div>
          <div class="mb-3">
             <label for="thumb" class="form-label">Immagine copertina</label>
-            <input type="text" class="form-control" name="thumb" id="title" value="{{ $comic->thumb }}">
+            <input type="text" class="form-control" id="title" name="thumb">
          </div>
          <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="number" class="form-control" name="price" id="title" value="{{ $comic->price }}">
+            <input type="number" class="form-control" id="title" name="price">
          </div>
          <div class="mb-3">
             <label for="series" class="form-label">Serie</label>
-            <input type="text" class="form-control" name="series" id="title" value="{{ $comic->series }}">
+            <input type="text" class="form-control" id="title" name="series">
          </div>
          <div class="mb-3">
             <label for="sale_date" class="form-label">Data di uscita</label>
-            <input type="text" class="form-control" name="sale_date" id="title" value="{{ $comic->sale_date }}">
+            <input type="text" class="form-control" id="title" name="sale_date">
          </div>
          <div class="mb-3">
             <label for="type" class="form-label">Tipo</label>
-            <input type="text" class="form-control" name="type" id="title" value="{{ $comic->type }}">
+            <input type="text" class="form-control" id="title" name="type">
          </div>
          
          <button type="submit" class="btn btn-primary">Submit</button>
