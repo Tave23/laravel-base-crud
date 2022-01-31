@@ -6,10 +6,12 @@
 
       <h1>Aggiungi nuovo fumetto</h1>
        
+      @dump($errors->all())
 
       <form action="{{ route('comics.store') }}" method="POST">
          @csrf
          @method('POST')
+
          <div class="mb-3">
            <label for="title" class="form-label">Titolo</label>
            <input type="text" class="form-control" id="title" name="title">
