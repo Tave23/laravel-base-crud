@@ -17,9 +17,10 @@ class ComicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $new_comics = Comic::paginate(4);
+    public function index(){
+
+        // orderBy.... per ordinare in modo decrescente per gli ID
+        $new_comics = Comic::orderBy('id', 'desc')->paginate(4);
 
         // dump($new_comics);
 
