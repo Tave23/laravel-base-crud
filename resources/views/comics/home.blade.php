@@ -37,7 +37,7 @@
                </td>
                <td>
                   {{-- per la funzione delete bisogna NECESSARIAMENTE usare il form con il @method DELETE e @csrf --}}
-                  <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                  <form onsubmit="return confirm('Sicuro di voler eliminare {{ $comic->title }}')" action="{{ route('comics.destroy', $comic) }}" method="POST">
                      @csrf
                      @method('DELETE')
 
