@@ -31,7 +31,8 @@
          <div class="mb-3">
            <label for="title" class="form-label">Titolo</label>
            <input type="text" class="form-control @error('title') is-invalid @enderror" 
-           id="title" name="title" placeholder="Inserisci il titolo" >
+           id="title" name="title" placeholder="Inserisci il titolo"
+           value="{{ old('title') }}">
 
            {{-- se esiste l'errore del 'titolo' allora stampa ciò che c'è dentro --}}
            @error('title')
@@ -46,7 +47,8 @@
             <label for="description" class="form-label">
                Descrizione
             </label>
-            <textarea class="form-control @error('description') is-invalid @enderror" id="title" name="description">
+            <textarea class="form-control @error('description') is-invalid @enderror" id="title" name="description"
+            value="{{ old('description') }}">
             </textarea>
 
             @error('description')
@@ -62,7 +64,8 @@
                Immagine copertina
             </label>
             <input type="text" class="form-control @error('thumb') is-invalid @enderror" 
-            id="title" name="thumb" placeholder="Inserisci l'immagine di copertina">
+            id="title" name="thumb" placeholder="Inserisci l'immagine di copertina"
+            value="{{ old('thumb') }}">
 
             @error('thumb')
                <p class="errore_nel_form">
@@ -77,7 +80,8 @@
                Prezzo
             </label>
             <input type="text" class="form-control  @error('price') is-invalid @enderror"
-            id="title" name="price" placeholder="Inserisci il prezzo">
+            id="title" name="price" placeholder="Inserisci il prezzo"
+            value="{{ old('price') }}">
 
             @error('price')
                <p class="errore_nel_form">
@@ -92,7 +96,8 @@
                Serie
             </label>
             <input type="text" class="form-control @error('series') is-invalid @enderror"
-            id="title" name="series" placeholder="Inserisci la serie">
+            id="title" name="series" placeholder="Inserisci la serie"
+            value="{{ old('series') }}">
 
             @error('series')
                <p class="errore_nel_form">
@@ -107,7 +112,8 @@
                Data di uscita
             </label>
             <input type="text" class="form-control @error('sale_date') is-invalid @enderror"
-            id="title" name="sale_date" placeholder="Inserisci la data di uscita">
+            id="title" name="sale_date" placeholder="Inserisci la data di uscita"
+            value="{{ old('sale_date') }}">
 
             @error('sale_date')
                <p class="errore_nel_form">
@@ -122,7 +128,8 @@
                Tipo
             </label>
             <input type="text" class="form-control @error('type') is-invalid @enderror" 
-            id="title" name="type" placeholder="Inserisci la tipologia di fumetto">
+            id="type" name="type" placeholder="Inserisci la tipologia di fumetto"
+            value="{{ old('type') }}">
 
             @error('type')
                <p class="errore_nel_form">
