@@ -54,8 +54,31 @@ class ComicController extends Controller
                 'thumb' => "required|min:2",
                 'price' => "required|numeric|max:20|min:1",
                 'series' => "required|max:150|min:2",
-                'sale_date' => "required|max:40|min:2",
+                'sale_date' => "required|date",
                 'type' => "required|max:100|min:2",
+            ],
+            [
+                'title.required' => "Inserire un titolo",
+                'title.max' => "Il titolo non può avere più di :max caratteri",
+                'title.min' => "Il titolo non può avere meno di :min caratteri",
+                'description.required' => "Inserire una descrizione",
+                'description.max' => "La descrizione non può avere più di :max caratteri",
+                'description.min' => "La descrizione non può avere meno di :min caratteri",
+                'thumb.required' => "Inserire un immagine di copertina",
+                'thumb.min' => "L'immagine di copertina deve avere almeno :min caratteri",
+                'price.required' => "Inserire un prezzo",
+                'price.numeric' => "Il prezzo dev'essere un numero",
+                'price.max' => "Il prezzo non può avere più di :max caratteri",
+                'price.min' => "Il prezzo deve avere almeno :min caratteri",
+                'series.required' => "Inserire una serie",
+                'series.max' => "La serie non può avere più di :max caratteri",
+                'series.min' => "La serie deve avere almeno :min caratteri",
+                'sale_date.require' => "Inserire una data di uscita",
+                'sale_date.date' => "La data di uscita dev'essere una data corretta",
+                'type.required' => "Inserire un tipo di fumetto",
+                'type.max' => "Il tipo non può avere più di :max caratteri",
+                'type.min' => "Il tipo deve avere almeno :min caratteri",
+
             ]
         );
 
