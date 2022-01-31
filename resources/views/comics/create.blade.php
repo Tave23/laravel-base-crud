@@ -48,6 +48,7 @@
                Descrizione
             </label>
             <textarea class="form-control @error('description') is-invalid @enderror" id="title" name="description"
+            {{-- con value="old('') tiene i dati inseriti anche se c'è un errore" --}}
             value="{{ old('description') }}">
             </textarea>
 
