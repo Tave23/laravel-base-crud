@@ -6,7 +6,21 @@
 
       <h1>Aggiungi nuovo fumetto</h1>
        
-      @dump($errors->all())
+      {{-- per dumpare gli errori --}}
+      {{-- @dump($errors->all()) --}}
+
+      @if ($errors->any())
+         <div class="alert alert-warning" role="alert">
+            <ul>
+               @foreach ($errors->all() as $error)
+                  <li>
+                     {{ $error }}
+                  </li> 
+               @endforeach
+            </ul>
+         </div>
+      @endif
+      
 
       <form action="{{ route('comics.store') }}" method="POST">
          @csrf
@@ -26,7 +40,7 @@
          </div>
          <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="number" class="form-control" id="title" name="price">
+            <input type="text" class="form-control" id="title" name="price">
          </div>
          <div class="mb-3">
             <label for="series" class="form-label">Serie</label>
