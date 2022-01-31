@@ -48,6 +48,7 @@ class ComicController extends Controller
 
         // validazione dati form
         $request->validate(
+            // come primo parametro stabilisco i parametri in cui devono rientrare i dati che vengono inseriti
             [
                 'title' => "required|max:100|min:2",
                 'description' => "required|max:1500|min:2",
@@ -57,6 +58,8 @@ class ComicController extends Controller
                 'sale_date' => "required|date",
                 'type' => "required|max:100|min:2",
             ],
+
+            // il secondo parametro è l'array dei messaggi di errore che voglio avere
             [
                 'title.required' => "Inserire un titolo",
                 'title.max' => "Il titolo non può avere più di :max caratteri",
@@ -73,7 +76,7 @@ class ComicController extends Controller
                 'series.required' => "Inserire una serie",
                 'series.max' => "La serie non può avere più di :max caratteri",
                 'series.min' => "La serie deve avere almeno :min caratteri",
-                'sale_date.require' => "Inserire una data di uscita",
+                'sale_date.required' => "Inserire una data di uscita",
                 'sale_date.date' => "La data di uscita dev'essere una data corretta",
                 'type.required' => "Inserire un tipo di fumetto",
                 'type.max' => "Il tipo non può avere più di :max caratteri",
