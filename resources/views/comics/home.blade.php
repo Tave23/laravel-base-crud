@@ -6,6 +6,12 @@
 
       <h1>Comics</h1>
 
+      @if (session('deleted_comic'))
+         <div class="alert alert-warning" role="alert">
+            {{ session('deleted_comic') }}
+         </div>
+      @endif
+
       <table class="table">
          <thead>
             <tr>
